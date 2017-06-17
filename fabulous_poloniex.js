@@ -8,7 +8,7 @@
 // @grant        none
 // ==/UserScript==
 
-var currency = "USD";
+var currency = "usd";
 
 if(typeof jQuery === 'undefined'|| !jQuery){
     (function(){
@@ -46,12 +46,12 @@ if(typeof jQuery === 'undefined'|| !jQuery){
                 $(".activeLoans").append("<b>Total Active Profit:</b><br/><div id='profitAmounts'></div>");
 
             hash = ($(".activeLoans .date").clone().children().remove().end().text());
-            $("#profitAmounts").html = "";
+            $("#profitAmounts").empty();
             for(var j = 0; j < keys.length; j++){
                 var i = keys[j];
                 var c = z[i];
                 var t_amount = c.toFixed(8) + " " + i;
-                t_amount = "<a href=\"https://www.google.com/search?q=" + c.toFixed(8) + " " + i.toLowerCase() + "+to+" + currency + "&ie=UTF-8&oe=UTF-8\" target=\"_blank\">" + t_amount + "</a>";
+                t_amount = "<a href=\"https://www.google.com/search?q=" + c.toFixed(8) + "+" + i.toLowerCase() + "+to+" + currency + "&ie=UTF-8&oe=UTF-8\" target=\"_blank\">" + t_amount + "</a>";
                 $("#profitAmounts").append("- <span id=\"amount_" + i + "\">" + t_amount + "</span><br/>");
             }
         } else {
@@ -59,7 +59,7 @@ if(typeof jQuery === 'undefined'|| !jQuery){
                 var i = keys[j];
                 var c = z[i];
                 var t_amount = c.toFixed(8) + " " + i;
-                t_amount = "<a href=\"https://www.google.com/search?q=" + c.toFixed(8) + " " + i.toLowerCase() + "+to+" + currency + "&ie=UTF-8&oe=UTF-8\" target=\"_blank\">" + t_amount + "</a>";
+                t_amount = "<a href=\"https://www.google.com/search?q=" + c.toFixed(8) + "+" + i.toLowerCase() + "+to+" + currency + "&ie=UTF-8&oe=UTF-8\" target=\"_blank\">" + t_amount + "</a>";
                 $('#amount_' + i).html(t_amount);
             }
         }
